@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  country_api_service:
+    environment:
+      MONGO_DB_HOST: mongo_db
+    build: .
+    restart: on-failure
+    ports:
+      - 8080:8080
+    depends_on:
+      - mongo_db
+  mongo_db:
+    image: "mongo:latest"
+    restart: on-failure
+    ports:
+      - 27017:27017
