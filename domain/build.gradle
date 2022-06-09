@@ -1,0 +1,45 @@
+plugins {
+    id 'java'
+}
+
+group 'br.com.tco'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    set('javaxVersion', '1')
+    set('lombokVersion', '1.18.24')
+    set('reactorCoreVersion', '3.4.18')
+    set('junitJupiterApiVersion', '5.8.2')
+    set('mockitoJunitJupiterVersion', '4.5.1')
+}
+
+dependencies {
+    implementation(
+            ["javax.inject:javax.inject:${javaxVersion}"],
+            ["io.projectreactor:reactor-core:${reactorCoreVersion}"],
+    )
+    compileOnly(
+            ["org.projectlombok:lombok:${lombokVersion}"],
+    )
+    annotationProcessor(
+            ["org.projectlombok:lombok:${lombokVersion}"],
+    )
+    testImplementation(
+            ["org.junit.jupiter:junit-jupiter-api:${junitJupiterApiVersion}"],
+            ["org.mockito:mockito-junit-jupiter:${mockitoJunitJupiterVersion}"],
+            ["io.projectreactor:reactor-test:${reactorCoreVersion}"],
+    )
+    testRuntimeOnly(
+            ["org.junit.jupiter:junit-jupiter-engine:${junitJupiterApiVersion}"],
+
+    )
+
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
