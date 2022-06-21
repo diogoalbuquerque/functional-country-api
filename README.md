@@ -1,5 +1,6 @@
 # Spring "Functional" Application
-
+[![Build Application](https://github.com/diogoalbuquerque/functional-country-api/actions/workflows/build-application.yml/badge.svg)](https://github.com/diogoalbuquerque/functional-country-api/actions/workflows/build-application.yml)
+[![codecov](https://codecov.io/gh/diogoalbuquerque/functional-country-api/branch/main/graph/badge.svg?token=HOTC5eLEuS)](https://codecov.io/gh/diogoalbuquerque/functional-country-api)
 ## Country API
 
 API for create and find countries.
